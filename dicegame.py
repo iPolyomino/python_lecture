@@ -4,30 +4,30 @@ from random import randint
 
 
 def main():
-    a_tips = 21
-    b_tips = 21
+    a_chip = 21
+    b_chip = 21
     for _ in range(5):
         dice = throwDice()
         if dice == 7:
-            a_tips += 7
+            a_chip += 7
         else:
-            a_tips -= abs(dice - 7)
-        print("a のチップは{}枚".format(a_tips))
-        if a_tips <= 0:
+            a_chip -= abs(dice - 7)
+        print("a のチップは{}枚".format(a_chip))
+        if a_chip <= 0:
             break
 
         dice = throwDice()
         if dice == 7:
-            b_tips += 7
+            b_chip += 7
         else:
-            b_tips -= abs(dice - 7)
-        print("b のチップは{}枚".format(b_tips))
-        if b_tips <= 0:
+            b_chip -= abs(dice - 7)
+        print("b のチップは{}枚".format(b_chip))
+        if b_chip <= 0:
             break
 
-    if a_tips > b_tips:
+    if a_chip > b_chip:
         print("aの勝ち")
-    elif a_tips == b_tips:
+    elif a_chip == b_chip:
         print("引き分け")
     else:
         print("bの勝ち")
