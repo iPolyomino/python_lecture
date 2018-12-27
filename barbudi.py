@@ -34,14 +34,17 @@ def main():
     resultPrint(player, turn, diceResult)
     isEnd, state = judge(diceResult)
 
-    while not isEnd:
+    while not isEnd and turn < 5*2-1:
         turn += 1
         diceResult = throwDice()
         resultPrint(player, turn, diceResult)
         isEnd, state = judge(diceResult)
 
-    name = playerName(player, turn)
-    print("{} さんの{}".format(name, state))
+    if isEnd:
+        name = playerName(player, turn)
+        print("{} さんの{}".format(name, state))
+    else:
+        print("引き分け")
 
 
 if __name__ == "__main__":
